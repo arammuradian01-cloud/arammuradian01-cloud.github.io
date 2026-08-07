@@ -1,0 +1,87 @@
+/* Микстелл — общие компоненты «обвязки» (шапка/меню/подвал/cookie/формы)
+   для страниц с собственной вёрсткой (главная). Не трогает layout контента. */
+:root{
+  --ink:#231F20; --teal:#00A9C0; --teal-deep:#0B7C8C; --pink:#EE2C72; --pink-deep:#d81f61;
+  --crimson:#EE2C72; --purple:#725B9F; --violet:#725B9F; --emerald:#009B8B; --orange:#E89000; --navy:#085A7D;
+  --bg:#F5F6F7; --line:#E4E6E8; --muted:#5C6266; --muted-2:#8A8F94; --card:#fff;
+  --teal-bg:#E6F7FA; --purple-bg:#F1EDF7; --pink-bg:#FDEAF1;
+  --success:#1E8E4D; --success-bg:#E4F5EA; --warn:#B07B00; --warn-bg:#FFF3D6;
+  --shadow:0 2px 12px rgba(7,34,43,.06); --shadow-md:0 8px 26px rgba(7,34,43,.09);
+  --shadow-lg:0 22px 56px rgba(7,34,43,.13);
+  --r:20px; --r-lg:24px; --maxw:1180px;
+}
+
+/* --- топбар: телефон --- */
+.topbar .tphone{color:#fff;font-weight:700;font-size:13px;white-space:nowrap}
+.topbar .tphone:hover{color:var(--teal)}
+
+/* --- активный пункт меню --- */
+.menu>li.current>a{color:var(--teal-deep)}
+.menu>li.has-drop>a{cursor:pointer}
+
+/* --- чип «персональный менеджер» --- */
+.pm-chip{display:inline-flex;flex-direction:column;line-height:1.15;padding:6px 14px;border-radius:12px;background:#e6f7fa;color:var(--teal-deep);text-align:left}
+.pm-chip b{font-size:13px;font-weight:700;color:var(--teal-deep)}
+.pm-chip small{font-size:11px;color:var(--muted)}
+
+/* --- кнопки-модификаторы --- */
+.btn-sm{padding:11px 18px;font-size:14px}
+.btn-block{display:block;width:100%;text-align:center}
+
+/* --- бургер и мобильное меню --- */
+@media(max-width:1080px){
+  .menu,.nav-phone,.pm-chip{display:none}
+  .burger{display:flex}
+}
+.mmenu{display:none;position:fixed;inset:0 0 0 auto;width:min(360px,86vw);background:#fff;z-index:80;box-shadow:var(--shadow-lg);padding:20px;overflow-y:auto;transform:translateX(100%);transition:.24s}
+.mmenu.open{display:block;transform:translateX(0)}
+.mmenu .mclose{position:absolute;top:16px;right:16px;font-size:26px;background:none;border:0;cursor:pointer;color:var(--muted)}
+.mmenu h6{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted-2);margin:20px 0 8px}
+.mmenu a{display:block;padding:11px 8px;border-radius:10px;color:var(--ink);font-weight:600;font-size:16px;text-decoration:none}
+.mmenu a:hover{background:var(--bg)}
+.mscrim{display:none;position:fixed;inset:0;background:rgba(7,34,43,.4);z-index:70}
+.mscrim.open{display:block}
+
+/* --- cookie-баннер (consent.js) --- */
+.cookie-banner{position:fixed;left:16px;right:16px;bottom:16px;max-width:780px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow-lg);padding:22px 24px;z-index:100;display:none}
+.cookie-banner.show{display:block}
+.cookie-banner p{font-size:14px;color:var(--ink);margin-bottom:14px;line-height:1.55}
+.cookie-actions{display:flex;gap:10px;flex-wrap:wrap}
+.cookie-actions .btn{padding:12px 20px;font-size:14px}
+.cookie-settings{margin-top:16px;border-top:1px solid var(--line);padding-top:14px;display:none}
+.cookie-settings.show{display:block}
+.cookie-opt{display:flex;gap:10px;align-items:flex-start;margin-bottom:12px}
+.cookie-opt input{margin-top:3px;width:auto;accent-color:var(--teal)}
+.cookie-opt .t{font-size:14px}
+.cookie-opt .t b{display:block}
+.cookie-opt small{color:var(--muted-2)}
+.cookie-link{background:none;border:none;color:#a9c4cd;cursor:pointer;font:inherit;padding:0;font-size:14px;text-align:left}
+.cookie-link:hover{color:#fff}
+
+/* --- сообщения форм и согласия --- */
+.form-msg{margin-top:12px;font-size:14px;line-height:1.5;display:none}
+.form-msg.ok,.form-msg.err{display:block}
+.form-msg.ok{color:#0e7c66}
+.form-msg.err{color:#c02626}
+.checkline{display:flex;gap:9px;align-items:flex-start;font-size:13px;color:var(--muted);margin-top:10px;line-height:1.45}
+.checkline input{margin-top:2px;width:auto;accent-color:var(--teal)}
+
+/* --- White Label заглушка --- */
+.wl-slot{min-height:80px}
+.wl-fallback{background:var(--bg);border:1px dashed var(--line);border-radius:14px;padding:18px;font-size:14px;line-height:1.55}
+.wl-fallback a{color:var(--teal-deep);font-weight:700}
+
+/* --- компактная шапка (чтобы правый блок не уезжал за экран) --- */
+header.nav .wrap{max-width:1200px;gap:14px}
+header.nav .menu{gap:2px}
+header.nav .menu>li>a{font-size:15px;padding:10px 12px}
+header.nav .nav-right{display:flex;align-items:center;gap:10px}
+header.nav .nav-right .btn{padding:11px 18px;font-size:14px}
+
+/* --- логотип-марка --- */
+.mx-mark{height:30px;width:auto;flex:none;display:block}
+
+/* шапка: без переносов */
+header.nav .menu>li>a{white-space:nowrap;padding:10px 10px}
+header.nav .pm-chip b,header.nav .pm-chip small{white-space:nowrap}
+header.nav .pm-chip{padding:7px 13px}

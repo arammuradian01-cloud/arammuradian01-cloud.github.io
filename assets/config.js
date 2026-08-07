@@ -30,7 +30,7 @@ window.MIXTELL = {
      Пусто => форма покажет телефон/почту (fallback). Впишите боевой endpoint API. */
   leadEndpoint: "",               // ⚠️ ВСТАВИТЬ URL CRM после установки, напр. "https://api.mixtell.ru/api/lead"
   leadEmail: "aram@mixtell.ru",   // тестовый приём заявок на почту, пока CRM не подключена
-  osagoApplyUrl: "/osago/apply/", // своя анкета ОСАГО (мини-CRM)
+  osagoApplyUrl: (window.MX_BASE||"/")+"osago/apply/", // своя анкета ОСАГО (мини-CRM)
 
   /* --- Аналитика (грузится ТОЛЬКО после согласия в cookie-баннере) ---
      Пусто => счётчики не подключаются (мы не подставляем несуществующие ID). */

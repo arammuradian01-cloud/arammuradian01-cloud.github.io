@@ -465,3 +465,17 @@ ul.checks li::before{content:"✓";position:absolute;left:0;top:0;color:var(--te
 .mt8{margin-top:8px}.mt16{margin-top:16px}.mt24{margin-top:24px}
 .pill-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
 .prose .callout,.prose .disclaimer{margin-top:16px}
+
+/* --- плашка вместо логотипа для партнёров без переданного файла --- */
+.logo-plate{display:inline-flex;align-items:center;justify-content:center;height:34px;padding:0 14px;border:1.5px solid var(--line);border-radius:9px;font-weight:800;font-size:15px;letter-spacing:.06em;color:var(--muted);background:#fff;margin-bottom:14px}
+.mx-mark{width:auto;height:26px;flex:none;display:block}
+.logo .mx-mark,.flogo .mx-mark{height:26px;width:auto}
+
+/* ============ РЕВИЗИЯ: единый фирменный стиль (шапка + кнопки) ============ */
+/* 1. Главная кнопка — фирменный бирюзовый (как на главной), розовый остаётся акцентом */
+.btn-primary{background:linear-gradient(135deg,var(--teal),var(--teal-deep));color:#fff;box-shadow:0 8px 20px rgba(0,154,187,.32)}
+.btn-primary:hover{background:var(--teal-deep);color:#fff;transform:translateY(-1px)}
+/* 2. Шапка: пункты меню и чип менеджера не переносятся на 2–3 строки */
+.menu>li>a{white-space:nowrap;padding:10px 10px}
+.pm-chip b,.pm-chip small{white-space:nowrap}
+.pm-chip{padding:7px 13px}
