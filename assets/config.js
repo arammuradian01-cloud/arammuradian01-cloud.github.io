@@ -44,18 +44,24 @@ window.MIXTELL = {
     aff_id: "101340",
     source: "10645",
     links: {
+      /* заполнено из ВИДЖЕТЫ/Рекомендуемые кросс-продукты .rtf и Добровольные кросс-продукты .rtf (07.08.2026).
+         Это ведут на страницу-витрину самого Сравни, а не в наш встроенный WL —
+         использовать только в блоках типа «рекомендуем также» / «кросс-продажа»,
+         не вместо своего WL-виджета на профильной странице продукта. */
+      osago: "https://go.sravni.ru/aff_c?aff_id=101340&offer_id=1064&source=10645&out=https%3A%2F%2Fwww.sravni.ru%2Fosago%2F%3F",
       kasko: "",                    // ⚠️ WL у Сравни нет — перезвон/подбор
-      strahovanie_ipoteki: "",      // используется WL-виджет (ниже), go-ссылка не нужна
-      strahovanie_kvartiry: "",     // используется WL-виджет (ниже)
-      ns: "",                       // используется WL-виджет (ниже)
-      vzr: "",                      // используется WL-виджет (ниже)
-      kleshch: "",                  // используется WL-виджет (ниже)
+      strahovanie_ipoteki: "https://go.sravni.ru/aff_c?aff_id=101340&offer_id=1072&source=10645&out=https%3A%2F%2Fwww.sravni.ru%2Fstrahovanie-ipoteki%2F%3F",
+      strahovanie_kvartiry: "https://go.sravni.ru/aff_c?aff_id=101340&offer_id=1070&source=10645&out=https%3A%2F%2Fwww.sravni.ru%2Fstrahovanie-nedvizhimosti%2F%3F",
+      ns: "https://go.sravni.ru/aff_c?aff_id=101340&offer_id=1266&source=10645&out=https%3A%2F%2Fwww.sravni.ru%2Fstrahovanie-ns%2F%3F",
+      vzr: "",                      // ⚠️ ждём go-ссылку/WL-код из кабинета
+      kleshch: "https://go.sravni.ru/aff_c?aff_id=101340&offer_id=2546&source=10645&out=https%3A%2F%2Fwww.sravni.ru%2Fstrahovka-ot-klescha%2F%3F",
       kredity: "",                  // используется WL-виджет (ниже, 1580)
       zaimy: "",                    // используется WL-виджет (ниже, 1580)
-      karty_kreditnye: "",          // используется WL-виджет (ниже, 1629 — живой)
+      karty_kreditnye: "https://go.sravni.ru/aff_c?aff_id=101340&offer_id=1629&source=10645&out=https%3A%2F%2Fwww.sravni.ru%2Fkredity%2Fpromo%2Fkarty%2F%3F",
       karty_debetovye: "",          // ⚠️ WL/оффера у Сравни нет — перезвон/подбор
       vklady: "",                   // ⚠️ оффера у Сравни нет — только форма + калькулятор
-      ipoteka: ""                   // ⚠️ WL кредит-ипотеки нет — перезвон/подбор
+      ipoteka: "",                  // ⚠️ WL кредит-ипотеки нет — перезвон/подбор
+      dobrovolnoe_strahovanie: "https://go.sravni.ru/aff_c?aff_id=101340&offer_id=2207&source=10645" // ⚠️ ВИДЖЕТЫ/Добровольные кросс-продукты .rtf — без своей страницы на сайте, out не задан
     }
   },
 
@@ -87,11 +93,23 @@ window.MIXTELL = {
         /* сверено: ВИДЖЕТЫ/Страхование от несчастного случая.rtf, 07.08.2026 */
         attrs: { "data-inFrame": "true", "data-theme-Palette": '{"elementsColor":"13, 209, 73","activeElementsColor":"13, 209, 73","backgroundColor":"0, 175, 255"}', "data-aff_sub": "19" }
       },
-      strahovanie_ipoteki:  { enabled: false, status: "moderation", product: "strahovanie-ipoteki",       offer_id: "1072", attrs: {} }, // ⚠️ ждём .rtf из кабинета — код ещё не сверен
-      strahovanie_kvartiry: { enabled: false, status: "moderation", product: "strahovanie-nedvizhimosti", offer_id: "1070", attrs: {} }, // ⚠️ ждём .rtf
+      strahovanie_ipoteki: {
+        enabled: true, status: "moderation", product: "strahovanie-ipoteki", offer_id: "1072",
+        /* сверено: ВИДЖЕТЫ/Страхование ипотеки.rtf, 07.08.2026 */
+        attrs: { "data-inFrame": "true", "data-habitation-Type": "", "data-debt": "3000000", "data-bank": "", "data-gender": "", "data-theme-Palette": '{"elementsColor":"35, 35, 199","activeElementsColor":"35, 35, 199"}', "data-aff_sub": "12" }
+      },
+      strahovanie_kvartiry: {
+        enabled: true, status: "moderation", product: "strahovanie-nedvizhimosti", offer_id: "1070",
+        /* сверено: ВИДЖЕТЫ/Страхование недвижимости .rtf, 07.08.2026 */
+        attrs: { "data-inFrame": "true", "data-filters.trim-Sum": "1500000", "data-filters.moving-Property-Sum": "1000000", "data-filters.civil-Responsibility-Sum": "3000000", "data-theme-palette": '{"elementsColor":"35, 35, 199","activeElementsColor":"35, 35, 199"}', "data-aff_sub": "14" }
+      },
       vzr:                  { enabled: false, status: "moderation", product: "strahovanie-vzr",           offer_id: "1068", attrs: {} }, // ⚠️ ждём .rtf
       kleshch:              { enabled: false, status: "moderation", product: "strahovanie-klesch",        offer_id: "2546", attrs: {} }, // ⚠️ ждём .rtf
-      karty_kreditnye:      { enabled: false, status: "live",       product: "kredity/promo/karty",       offer_id: "1629", attrs: {} }, // ⚠️ ждём .rtf
+      karty_kreditnye: {
+        enabled: true, status: "live", product: "kredity/promo/karty", offer_id: "1629",
+        /* сверено: ВИДЖЕТЫ/Подбор кредитных карт .rtf, 07.08.2026 */
+        attrs: { "data-inFrame": "true", "data-trackScroll": "true", "data-aff_sub": "26" }
+      },
       kredity:              { enabled: false, status: "moderation", product: "kredity",                   offer_id: "1580", attrs: {} }, // ⚠️ ждём .rtf
       zaimy:                { enabled: false, status: "moderation", product: "kredity",                   offer_id: "1580", attrs: {} }  // ⚠️ ждём .rtf
     }
