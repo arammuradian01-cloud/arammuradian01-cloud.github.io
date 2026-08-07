@@ -70,6 +70,7 @@ h2.sec{font-size:clamp(26px,3.4vw,34px);font-weight:800}
 .ticker .lbl{color:#8fb0bc;font-weight:500;font-size:12px}
 .topbar .tphone{color:#fff;font-weight:700;white-space:nowrap}
 @media(max-width:860px){.ticker .lbl,.ticker .rate:nth-child(n+4){display:none}}
+@media(max-width:560px){.ticker .rate:nth-child(n+2){display:none}}
 
 /* ---- header ---- */
 header.nav{position:sticky;top:0;z-index:60;background:rgba(245,246,247,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
@@ -513,7 +514,7 @@ ul.checks li::before{content:"✓";position:absolute;left:0;top:0;color:var(--te
 @media(max-width:560px){.num small{display:block;margin-top:4px}}
 
 /* ---- шапка: гарантированно помещается при реальном Montserrat ---- */
-header.nav .wrap{gap:12px}
+header.nav .wrap{max-width:1200px;gap:14px}
 header.nav .menu>li>a{font-size:14.5px;padding:10px 9px}
 header.nav .nav-right{gap:10px}
 @media(max-width:1340px){header.nav .pm-chip{display:none}}
