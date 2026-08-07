@@ -479,3 +479,28 @@ ul.checks li::before{content:"✓";position:absolute;left:0;top:0;color:var(--te
 .menu>li>a{white-space:nowrap;padding:10px 10px}
 .pm-chip b,.pm-chip small{white-space:nowrap}
 .pm-chip{padding:7px 13px}
+
+/* верхняя строка котировок — горизонтальная прокрутка вместо выезда за экран */
+.topbar{overflow:hidden}
+.topbar .wrap{overflow-x:auto;scrollbar-width:none}
+.topbar .wrap::-webkit-scrollbar{display:none}
+.topbar .rates{display:flex;align-items:center;gap:16px;flex:1;min-width:0;overflow-x:auto;scrollbar-width:none}
+.topbar .rates::-webkit-scrollbar{display:none}
+.rate{white-space:nowrap;flex:none}
+/* обрезаем «выезд» бегущей строки логотипов */
+.marquee,.mrow{overflow:hidden}
+
+/* мобильные: ни один блок не выходит за экран */
+.pcard,.nums>*,.pgrid>*{min-width:0}
+@media(max-width:700px){.nums{grid-template-columns:1fr}}
+@media(max-width:900px) and (min-width:701px){.nums{grid-template-columns:1fr 1fr}}
+
+/* --- шапка на телефоне: CTA прячем (он есть в мобильном меню) --- */
+@media(max-width:620px){
+  header.nav .nav-right>.btn{display:none}
+  header.nav .wrap{gap:10px;padding-left:16px;padding-right:16px}
+  .logo{font-size:18px}
+}
+@media(max-width:380px){.logo{font-size:16px}}
+/* цена в герое: подпись с новой строки на телефоне */
+@media(max-width:560px){.num small{display:block;margin-top:4px}}

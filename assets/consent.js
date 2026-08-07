@@ -64,7 +64,7 @@
       'аналитические (Яндекс.Метрика) и маркетинговые (рекламные пиксели). Подробнее — '+
       'в <a href="/cookie/">Политике cookie</a>.</p>'+
       '<div class="cookie-actions">'+
-        '<button class="btn" data-cc="all">Принять все</button>'+
+        '<button class="btn btn-primary" data-cc="all">Принять все</button>'+
         '<button class="btn btn-ghost" data-cc="need">Только необходимые</button>'+
         '<button class="btn btn-ghost" data-cc="toggle">Настроить</button>'+
       '</div>'+
@@ -75,7 +75,7 @@
           '<small>Яндекс.Метрика — как вы пользуетесь сайтом. Персональные данные не передаются.</small></div></div>'+
         '<div class="cookie-opt"><input type="checkbox" id="ccMarketing"><div class="t"><b>Маркетинговые</b>'+
           '<small>Рекламные пиксели (VK) — чтобы показывать релевантные предложения.</small></div></div>'+
-        '<button class="btn" data-cc="save">Сохранить выбор</button>'+
+        '<button class="btn btn-primary" data-cc="save">Сохранить выбор</button>'+
       '</div>';
     document.body.appendChild(b);
     requestAnimationFrame(function(){ b.classList.add("show"); });
