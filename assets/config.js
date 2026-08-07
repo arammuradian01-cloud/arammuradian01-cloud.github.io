@@ -103,7 +103,11 @@ window.MIXTELL = {
         /* сверено: ВИДЖЕТЫ/Страхование недвижимости .rtf, 07.08.2026 */
         attrs: { "data-inFrame": "true", "data-filters.trim-Sum": "1500000", "data-filters.moving-Property-Sum": "1000000", "data-filters.civil-Responsibility-Sum": "3000000", "data-theme-palette": '{"elementsColor":"35, 35, 199","activeElementsColor":"35, 35, 199"}', "data-aff_sub": "14" }
       },
-      vzr:                  { enabled: false, status: "moderation", product: "strahovanie-vzr",           offer_id: "1068", attrs: {} }, // ⚠️ ждём .rtf
+      vzr: {
+        enabled: true, status: "moderation", product: "vzr", offer_id: "1068",
+        /* сверено: ВИДЖЕТЫ/ВЗР (Страхование выезжающих за рубеж).rtf, 07.08.2026 — product здесь "vzr", НЕ "strahovanie-vzr" */
+        attrs: { "data-inFrame": "true", "data-destinations": "null", "data-theme-palette": '{"elementsColor":"35, 35, 199","activeElementsColor":"35, 35, 199"}', "data-aff_sub": "10" }
+      },
       kleshch:              { enabled: false, status: "moderation", product: "strahovanie-klesch",        offer_id: "2546", attrs: {} }, // ⚠️ ждём .rtf
       karty_kreditnye: {
         enabled: true, status: "live", product: "kredity/promo/karty", offer_id: "1629",
