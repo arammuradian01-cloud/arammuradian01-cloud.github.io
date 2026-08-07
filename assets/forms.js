@@ -129,12 +129,16 @@
         slot.innerHTML="";
         var s=document.createElement("script");
         s.src=CFG.wl.loader; s.async=true;
-        s.setAttribute("data-inFrame","true");
+        /* Набор атрибутов строго по коду из кабинета Сравни (новый WL) */
         s.setAttribute("data-product",cfg.product);
+        s.setAttribute("data-is-New-Wl",CFG.wl.isNewWl||"true");
+        s.setAttribute("data-inFrame",CFG.wl.inFrame||"true");
+        s.setAttribute("data-layout",cfg.layout||CFG.wl.layout||"full");
+        s.setAttribute("data-theme",CFG.wl.theme||"sravni_light");
+        s.setAttribute("data-aff_sub",cfg.aff_sub||CFG.wl.aff_sub||"9");
         s.setAttribute("data-offer_id",cfg.offer_id);
         s.setAttribute("data-source",CFG.wl.source);
         s.setAttribute("data-aff_id",CFG.wl.aff_id);
-        s.setAttribute("data-color",CFG.wl.color);
         slot.appendChild(s);
       } else {
         slot.innerHTML='<div class="wl-fallback muted">Онлайн-расчёт по этому продукту скоро заработает. '+

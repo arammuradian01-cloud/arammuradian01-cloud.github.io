@@ -1,3 +1,10 @@
+
+/* --- локальный Montserrat (без внешних CDN) --- */
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/montserrat-400.woff2') format('woff2')}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/montserrat-500.woff2') format('woff2')}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:600;font-display:swap;src:url('fonts/montserrat-600.woff2') format('woff2')}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/montserrat-700.woff2') format('woff2')}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:800;font-display:swap;src:url('fonts/montserrat-800.woff2') format('woff2')}
 /* Микстелл — общие компоненты «обвязки» (шапка/меню/подвал/cookie/формы)
    для страниц с собственной вёрсткой (главная). Не трогает layout контента. */
 :root{
@@ -110,3 +117,10 @@ header.nav .pm-chip{padding:7px 13px}
 @media(max-width:380px){.logo{font-size:16px}}
 /* цена в герое: подпись с новой строки на телефоне */
 @media(max-width:560px){.num small{display:block;margin-top:4px}}
+
+/* ---- шапка: гарантированно помещается при реальном Montserrat ---- */
+header.nav .wrap{gap:12px}
+header.nav .menu>li>a{font-size:14.5px;padding:10px 9px}
+header.nav .nav-right{gap:10px}
+@media(max-width:1340px){header.nav .pm-chip{display:none}}
+@media(max-width:1180px){header.nav .menu>li>a{font-size:14px;padding:10px 7px}}

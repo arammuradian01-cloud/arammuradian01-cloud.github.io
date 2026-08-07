@@ -72,6 +72,13 @@ window.MIXTELL = {
     aff_id: "101340",
     source: "10645",
     color: "0,169,192",
+    /* Параметры нового White Label — точно как в коде из кабинета Сравни
+       (ВИДЖЕТЫ/ОСАГО.rtf от 07.08.2026). Менять только вместе с кабинетом. */
+    isNewWl: "true",
+    inFrame: "true",
+    layout: "full",
+    theme: "sravni_light",
+    aff_sub: "9",
     products: {
       osago:                { enabled: true, status: "moderation", product: "osago",                     offer_id: "1064" },
       strahovanie_ipoteki:  { enabled: true, status: "moderation", product: "strahovanie-ipoteki",       offer_id: "1072" },
