@@ -71,24 +71,29 @@ window.MIXTELL = {
     loader: "https://www.sravni.ru/widgets/loader.js",
     aff_id: "101340",
     source: "10645",
-    color: "0,169,192",
-    /* Параметры нового White Label — точно как в коде из кабинета Сравни
-       (ВИДЖЕТЫ/ОСАГО.rtf от 07.08.2026). Менять только вместе с кабинетом. */
-    isNewWl: "true",
-    inFrame: "true",
-    layout: "full",
-    theme: "sravni_light",
-    aff_sub: "9",
+    /* ⚠️ ВАЖНО: у каждого продукта в кабинете Сравни СВОЙ уникальный код виджета —
+       разный набор атрибутов и разный aff_sub. Нельзя копировать атрибуты одного
+       продукта на другой. Ниже — только те продукты, чей .rtf-код из папки
+       ВИДЖЕТЫ уже сверен построчно с сайтом. У остальных enabled:false до сверки.
+       Формат attrs: произвольные data-* атрибуты ровно как в присланном коде. */
     products: {
-      osago:                { enabled: true, status: "moderation", product: "osago",                     offer_id: "1064" },
-      strahovanie_ipoteki:  { enabled: true, status: "moderation", product: "strahovanie-ipoteki",       offer_id: "1072" },
-      strahovanie_kvartiry: { enabled: true, status: "moderation", product: "strahovanie-nedvizhimosti", offer_id: "1070" },
-      ns:                   { enabled: true, status: "moderation", product: "strahovanie-ns",            offer_id: "1266" },
-      vzr:                  { enabled: true, status: "moderation", product: "strahovanie-vzr",           offer_id: "1068" },
-      kleshch:              { enabled: true, status: "moderation", product: "strahovanie-klesch",        offer_id: "2546" },
-      karty_kreditnye:      { enabled: true, status: "live",       product: "kredity/promo/karty",       offer_id: "1629" },
-      kredity:              { enabled: true, status: "moderation", product: "kredity",                   offer_id: "1580" },
-      zaimy:                { enabled: true, status: "moderation", product: "kredity",                   offer_id: "1580" }
+      osago: {
+        enabled: true, status: "moderation", product: "osago", offer_id: "1064",
+        /* сверено: ВИДЖЕТЫ/ОСАГО.rtf, 07.08.2026 */
+        attrs: { "data-is-New-Wl": "true", "data-inFrame": "true", "data-layout": "full", "data-theme": "sravni_light", "data-aff_sub": "9" }
+      },
+      ns: {
+        enabled: true, status: "moderation", product: "strahovanie-ns", offer_id: "1266",
+        /* сверено: ВИДЖЕТЫ/Страхование от несчастного случая.rtf, 07.08.2026 */
+        attrs: { "data-inFrame": "true", "data-theme-Palette": '{"elementsColor":"13, 209, 73","activeElementsColor":"13, 209, 73","backgroundColor":"0, 175, 255"}', "data-aff_sub": "19" }
+      },
+      strahovanie_ipoteki:  { enabled: false, status: "moderation", product: "strahovanie-ipoteki",       offer_id: "1072", attrs: {} }, // ⚠️ ждём .rtf из кабинета — код ещё не сверен
+      strahovanie_kvartiry: { enabled: false, status: "moderation", product: "strahovanie-nedvizhimosti", offer_id: "1070", attrs: {} }, // ⚠️ ждём .rtf
+      vzr:                  { enabled: false, status: "moderation", product: "strahovanie-vzr",           offer_id: "1068", attrs: {} }, // ⚠️ ждём .rtf
+      kleshch:              { enabled: false, status: "moderation", product: "strahovanie-klesch",        offer_id: "2546", attrs: {} }, // ⚠️ ждём .rtf
+      karty_kreditnye:      { enabled: false, status: "live",       product: "kredity/promo/karty",       offer_id: "1629", attrs: {} }, // ⚠️ ждём .rtf
+      kredity:              { enabled: false, status: "moderation", product: "kredity",                   offer_id: "1580", attrs: {} }, // ⚠️ ждём .rtf
+      zaimy:                { enabled: false, status: "moderation", product: "kredity",                   offer_id: "1580", attrs: {} }  // ⚠️ ждём .rtf
     }
   },
 

@@ -129,13 +129,10 @@
         slot.innerHTML="";
         var s=document.createElement("script");
         s.src=CFG.wl.loader; s.async=true;
-        /* Набор атрибутов строго по коду из кабинета Сравни (новый WL) */
+        /* Атрибуты строго по коду из кабинета Сравни для ЭТОГО продукта — у каждого свой набор */
         s.setAttribute("data-product",cfg.product);
-        s.setAttribute("data-is-New-Wl",CFG.wl.isNewWl||"true");
-        s.setAttribute("data-inFrame",CFG.wl.inFrame||"true");
-        s.setAttribute("data-layout",cfg.layout||CFG.wl.layout||"full");
-        s.setAttribute("data-theme",CFG.wl.theme||"sravni_light");
-        s.setAttribute("data-aff_sub",cfg.aff_sub||CFG.wl.aff_sub||"9");
+        var attrs=cfg.attrs||{};
+        Object.keys(attrs).forEach(function(name){ s.setAttribute(name,attrs[name]); });
         s.setAttribute("data-offer_id",cfg.offer_id);
         s.setAttribute("data-source",CFG.wl.source);
         s.setAttribute("data-aff_id",CFG.wl.aff_id);
