@@ -108,7 +108,11 @@ window.MIXTELL = {
         /* сверено: ВИДЖЕТЫ/ВЗР (Страхование выезжающих за рубеж).rtf, 07.08.2026 — product здесь "vzr", НЕ "strahovanie-vzr" */
         attrs: { "data-inFrame": "true", "data-destinations": "null", "data-theme-palette": '{"elementsColor":"35, 35, 199","activeElementsColor":"35, 35, 199"}', "data-aff_sub": "10" }
       },
-      kleshch:              { enabled: false, status: "moderation", product: "strahovanie-klesch",        offer_id: "2546", attrs: {} }, // ⚠️ ждём .rtf
+      kleshch: {
+        enabled: true, status: "moderation", product: "strahovka-ot-klescha", offer_id: "2546",
+        /* сверено: ВИДЖЕТЫ/Страхование от укуса клеща.rtf, 07.08.2026 — product здесь "strahovka-ot-klescha", НЕ "strahovanie-klesch" */
+        attrs: { "data-inFrame": "true", "data-theme-Palette": '{"elementsColor":"35, 35, 199","activeElementsColor":"35, 35, 199"}', "data-aff_sub": "148648" }
+      },
       karty_kreditnye: {
         enabled: true, status: "live", product: "kredity/promo/karty", offer_id: "1629",
         /* сверено: ВИДЖЕТЫ/Подбор кредитных карт .rtf, 07.08.2026 */
